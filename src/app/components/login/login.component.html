@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="login">
+    <h2 class="login__title">Welcome Back</h2>
+    <p class="login__register-text">Don't have an account? <a href="register" class="login__register-link">Create today!</a></p>
+
+    <div class="login__form">
+      <label class="login__label">Email</label>
+      <input [(ngModel)]="loginUser.email" type="text" class="login__input">
+
+      <label class="login__label">Password</label>
+      <input type="password" [(ngModel)]="loginUser.password" class="login__input">
+
+      <div class="login__forgot-password">
+        <a href="#" class="login__forgot-password-link">Forgot password?</a>
+      </div>
+
+      <button (click)="login(loginUser)" class="login__button">Ingresar</button>
+    </div>
+  </div>
+</div>

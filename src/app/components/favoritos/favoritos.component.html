@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+
+<h1>Mi Lista de Favoritos</h1>
+<table class="lista-de-favoritos">
+  <th>Image</th>
+  <th>Name</th>
+  <th>Album</th>
+  <th>Preview</th>
+
+  <tr *ngFor="let cancion of listaDeFav | async" class="lista-de-reproduccion__item__name">
+    <td> <img [src]="cancion.album.images[0].url" alt /> </td>
+    <td>{{ cancion.name }}</td>
+    <td>
+      <p>{{ cancion.album.name }}</p>
+    </td>
+    <td> <audio [src]="cancion.preview_url" controls></audio></td>
+
+  </tr>
+</table>
+<div *ngIf="!(listaDeFav | async) "><h4>No hay resultados</h4></div>

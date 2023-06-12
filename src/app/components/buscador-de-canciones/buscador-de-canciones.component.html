@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div class="buscador-de-canciones">
+  <h1>Buscador de Canciones</h1>
+  <div class="buscador-de-canciones__search-bar">
+    <input type="text" [(ngModel)]="query" placeholder="Buscar canciones" />
+    <button class="search-button" (click)="buscarCanciones(query)">Buscar</button>
+  </div>
+
+  <table class="buscador-de-canciones__results-list">
+    <th>Image</th>
+    <th>Name</th>
+    <th>Album</th>
+    <th>Preview</th>
+    <th>Add to List</th>
+    <th>Favorite</th>
+
+
+    <tr
+      *ngFor="let cancion of resultados"
+      class="buscador-de-canciones__results-list__item"
+    >
+      <td>
+        <img [src]="cancion.album.images[0].url" alt />
+      </td>
+      <td>{{ cancion.name }}</td>
+      <td>
+        <p>{{ cancion.album.name }}</p>
+      </td>
+      <td>
+        <audio [src]="cancion.preview_url" controls></audio>
+      </td>
+
+      <td>
+        <button
+          (click)="agregarCancionLista(cancion)"
+          class="buscador-de-canciones__results-list__item__add-button"
+        ></button>
+      </td>
+      <td>
+        <button
+          (click)="agregarCancionFav(cancion)"
+          class="buscador-de-canciones__results-list__item__fav-button"
+        ></button>
+      </td>
+    </tr>
+  </table>
+  <div *ngIf="resultados.length == 0"><h4>No hay resultados</h4></div>
+</div>

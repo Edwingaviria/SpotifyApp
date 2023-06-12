@@ -1,0 +1,44 @@
+.navbar
+  background-color: #005062
+  padding: 10px
+
+  @media screen and (max-width: 768px)
+    display: flex
+    flex-direction: column
+
+.navbar-nav
+  list-style: none
+  display: flex
+  align-items: center
+  justify-content: flex-start
+
+.nav-item
+  margin-right: 10px
+  color: #fff
+  cursor: pointer
+
+  &:last-child
+    margin-right: 0
+
+.nav-item.active
+  background-color: #818d8f
+  color: #fff
+  border: 2px solid #818d8f
+  border-radius: 4px
+  padding: 8px 16px
+
+.nav-user
+  margin-left: auto
+  font-weight: bold
+  color: #ff795e
+
+
+button
+  background-color: transparent
+  border: none
+  color: #fff
+  cursor: pointer
+  margin-left: auto
+
+  &:hover
+    text-decoration: underline

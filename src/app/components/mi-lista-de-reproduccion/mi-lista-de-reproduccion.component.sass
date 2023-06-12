@@ -1,0 +1,73 @@
+// Variables
+$breakpoint-small: 480px
+$breakpoint-medium: 768px
+$breakpoint-large: 1024px
+
+img
+      width: 50px
+      height: 50px
+      object-fit: cover
+      border-radius: 4px
+
+h4
+  margin: 20px
+  text-align: center
+  color:#005062
+    
+// Estilos del título
+h1
+  font-size: 24px
+  text-align: center
+  margin-bottom: 20px
+
+  @media (min-width: $breakpoint-medium)
+    font-size: 32px
+
+
+
+// Estilos de la tabla de lista de reproducción
+.lista-de-reproduccion
+  width: 100%
+  border-collapse: collapse
+  text-align: center
+  align-items: center
+  justify-content: center
+
+  @media (min-width: $breakpoint-small)
+    width: 90%
+    margin: 0 auto
+
+
+
+// Estilos de las filas de la tabla
+tr
+  border: none
+
+  &:last-child
+    border-bottom: none
+
+th, td
+  padding: 10px
+  text-align: center
+  align-items: center
+  justify-content: center
+  border-bottom: 1px solid #005062
+
+
+// Estilos de los nombres de canciones en la tabla
+.lista-de-reproduccion__item__name
+  padding: 10px
+
+  @media (min-width: $breakpoint-medium)
+    padding: 20px
+
+// Estilos del botón de eliminar en la tabla
+.lista-de-reproduccion__item__button
+  padding: 5px 10px
+  background-color: #ff795e
+  color: white
+  border: none
+  cursor: pointer
+
+  @media (min-width: $breakpoint-medium)
+    padding: 10px 20px

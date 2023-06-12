@@ -1,0 +1,161 @@
+// Variables
+$primary-color: #005062
+$secondary-color: #818d8f
+$font-color: #fff
+$button-padding: 12px 20px
+// Estilos generales para botones con iconos
+.button-with-icon
+  display: flex
+  align-items: center
+  justify-content: center
+
+.button-with-icon__icon
+  margin-right: 5px
+
+// Estilos generales
+body
+  background-color: $secondary-color
+  color: $font-color
+
+.container
+  max-width: 1200px
+  margin: 0 auto
+  padding: 20px
+
+// Buscador de Canciones
+.buscador-de-canciones
+  padding: 20px
+
+  h1
+    font-size: 24px
+    margin-bottom: 20px
+
+  h4
+    margin: 20px
+    text-align: center
+    color: $primary-color
+
+  .buscador-de-canciones__search-bar
+    display: flex
+    align-items: center
+    margin-bottom: 20px
+
+    input[type="text"]
+      flex: 1
+      padding: 10px
+      border-radius: 4px
+      border: solid 1px
+      font-size: 16px
+      margin-right: 10px
+
+    button
+      padding: $button-padding
+      background-color: $primary-color
+      color: $font-color
+      border: none
+      border-radius: 4px
+      cursor: pointer
+      font-size: 16px
+      transition: background-color 0.3s
+
+      &:hover
+        background-color: darken($primary-color, 10%)
+
+  .buscador-de-canciones__results-list
+    width: 100%
+    border-collapse: collapse
+
+    text-align: center
+    align-items: center
+    justify-content: center
+
+
+    th, td
+      padding: 10px
+      text-align: center
+      border-bottom: 1px solid $primary-color
+
+    audio
+      color:$primary-color
+
+
+    img
+      width: 50px
+      height: 50px
+      object-fit: cover
+      border-radius: 4px
+
+    .buscador-de-canciones__results-list__item
+      &:nth-child(even)
+        background-color:#e6f0eb
+
+@media screen and (max-width: 768px)
+  .buscador-de-canciones
+    h1
+      font-size: 24px
+
+  .buscador-de-canciones__search-bar
+    flex-direction: column
+    align-items: center
+
+  .buscador-de-canciones__search-bar input[type="text"],
+  .buscador-de-canciones__search-bar button
+    width: 100%
+    margin-bottom: 10px
+
+  .buscador-de-canciones__results-list
+    display: block
+
+  .buscador-de-canciones__results-list__item
+    display: block
+
+  .buscador-de-canciones__results-list__item td
+    display: block
+    text-align: center
+    margin-bottom: 10px
+
+  .buscador-de-canciones__results-list__item__add-button,
+  .buscador-de-canciones__results-list__item__fav-button
+    flex-direction: column
+    align-items: center
+    width: 100%
+
+// Estilos específicos para botón "Agregar a mi lista de Reproducción"
+.buscador-de-canciones__results-list__item__add-button
+
+  padding: $button-padding
+  background-color: $secondary-color
+  color: $font-color
+  border: none
+  border-radius: 4px
+  cursor: pointer
+  font-size: 16px
+  transition: background-color 0.3s
+
+  &:hover
+    background-color: darken($primary-color, 10%)
+
+  &::before
+    content: '\002B' // Icono de "+" en código unicode
+    font-family: 'Font Awesome' // Agrega la fuente de iconos deseada
+    font-size: 16px
+
+// Estilos específicos para botón "Agregar a Favoritos"
+.buscador-de-canciones__results-list__item__fav-button
+
+  padding: $button-padding
+  background-color: $font-color
+  color: red
+  border: none
+  border-radius: 4px
+  cursor: pointer
+  font-size: 16px
+  transition: background-color 0.3s
+
+  &:hover
+    background-color: lighten(#ff795e, 10%)
+
+  &::before
+    content: '\2764' // Icono de corazón en código unicode
+    font-family: 'Font Awesome' // Agrega la fuente de iconos deseada
+    font-size: 16px
